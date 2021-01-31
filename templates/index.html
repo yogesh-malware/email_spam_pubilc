@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+
+    <title>Email-Spammer</title>
+</head>
+
+<body>
+    <div class="container">
+        <form id="contact" action="/result/" method="post">
+            {% csrf_token %}
+            <h3>Email Spammer</h3>
+            <h4>ATTENTION:  The moment you click 'SUBMIT' the page will reload.
+                That is the time when we are sending meaasges.
+                Dont worry the messages will be sent.</h4>
+            <fieldset>
+                <input name="email" id="email" placeholder="Email Address" type="email" tabindex="2" required>
+            </fieldset>
+                <textarea name="body" id="body" placeholder="Type your message here...." tabindex="5" required></textarea>
+            </fieldset>
+            <fieldset>
+                <input name="count" id="count" placeholder="Count (limit=10)" type="text" tabindex="1" required autofocus>
+            </fieldset>
+            <fieldset>
+                <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+            </fieldset>
+        </form>
+    </div>
+</body>
+
+</html>
